@@ -1,0 +1,153 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+
+body {
+    align-items: center;
+    justify-content: space-between;
+    line-height: 1.6;
+    color: #333;
+    background: #f5f5f5;
+    
+}
+#noticias{/* le cambiaré el name a "card1" para hacer una receta universal "palabras de chuchin"*/
+    padding: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#noticias h2{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.noticias-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+
+}
+.noticias-card{
+    background-color:white;
+    border-radius: 10px;
+    border: 1px solid darkgray;
+  
+}
+.noticias-card:hover{
+    transform: translateY(-15px);
+    transition: 0.3s ease;
+    box-shadow: 0 8px 16px black; 
+}
+.noticias-card img{
+    border-radius: 30px;
+    padding: 20px;
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+    
+}
+.noticias-card h3{
+    padding: 20px;
+    color: #333;
+}
+.informacion{
+    color: #5b0c0c;
+    font-weight: bold;
+    padding: 20px;
+
+}
+.descripcion{
+    padding: 20px;
+    color: #666;
+}
+.noticias-card button{
+    margin: 1rem;
+    padding: .5rem 1rem;
+    background-color:#642727;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+
+.noticias-card button:hover{
+     background-color:#2c1515;
+}
+
+.btn button{
+    background-color: #642727;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 2rem;
+   
+}
+.btn button:hover{
+     background-color: #000;
+}
+
+#contacto{
+    background-color: #f9f9f9;
+    padding: 4rem 2rem;
+
+}
+#contacto h2{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+form{
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction:column ;
+    gap: 1rem;
+}
+
+input,textarea{
+    padding: .8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+textarea{
+    height: 150px;
+    resize: vertical;
+}
+
+form button{
+    background-color: #5b0c0c;
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #5b0c0c;
+    color: white;
+}
+footer{
+    background-color: #5b0c0c;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+
+}
+.contenido{
+    background-color: #5b0c0c;
+    margin: 20px;
+    align-items: center;
+    width: 60%;
+}
+ 
