@@ -1,0 +1,192 @@
+/* header.css - Estilos unificados para el header en todas las páginas */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+}
+
+header {
+    background-color: #5b0c0c;
+    box-shadow: 0 2px 5px rgba(94, 11, 30, 0.3);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    background-color: #5b0c0c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin: 10px;
+}
+
+.logo:hover {
+    transform: rotateY(360deg);
+    transition: 3s ease;
+    perspective: preserve-3d;
+}
+
+.logo_uni {
+    max-width: 5%;
+    padding: 0;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.nav-links a:hover {
+    color: yellow;
+    background: rgb(70, 1, 1);
+}
+
+.menu-item {
+    position: relative;
+}
+
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #5b0c0c;
+    width: 200px;
+    display: none;
+}
+
+.submenu li {
+    width: 100%;
+}
+
+.submenu a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    border-bottom: 1px solid #701616;
+}
+
+.submenu a:hover {
+    background: #420505;
+}
+
+.menu-item:hover .submenu {
+    display: block;
+}
+
+/* Ajuste para contenido principal (evita que se oculte detrás del header fijo) */
+main {
+    margin-top: 80px; /* Ajusta según la altura de tu header */
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 1rem;
+        gap: 1rem;
+        width: 100%;
+    }
+    
+    .logo {
+        margin: 10px 0;
+    }
+    
+    .submenu {
+        position: static;
+        width: 100%;
+        display: none;
+    }
+    
+    .menu-item:hover .submenu {
+        display: block;
+        position: static;
+    }
+}
+
+
+
+
+/* FOOTER ESTILOS */
+footer {
+    background-color: #5b0c0c;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: auto; /* Esto empuja el footer hacia abajo */
+    width: 100%;
+}
+
+/* Estilos adicionales para el footer */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+    list-style: none;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: yellow;
+}
+
+.copyright {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Media queries para el footer */
+@media screen and (max-width: 768px) {
+    footer {
+        padding: 1.5rem 1rem;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}

@@ -3,24 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <title>Noticia Proyectos Estudiantiles</title>
+    <link rel="stylesheet" href="../header.css">
     <link rel="stylesheet" href="src/Dis.css">
 </head>
 <body>
 
-<header>
+ <header>
         <nav>
-            <div class="logo">Unsis </div>
-            <ul class="nav-links">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#noticias">Noticias</a></li>
-                <li><a href="#Cultura">Cultura</a></li>
-                <li><a href="#deportes">Deportes</a></li>
-                <li><a href="#comunidad">Comunidad</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+            <img src="../img_principal/Logo.png" alt="Logo de la Universidad" class="logo_uni">
 
+            <div class="logo">UNSITO</div>
+
+            <ul class="nav-links">
+                <li><a href="../Principal.html">Inicio</a></li>
+
+                
+                <li class="menu-item">
+                    <a href="../Noticias/Noticias_gral.html">Noticias</a>
+                </li>
+                
+                <li class="menu-item">
+                    <a href="../Cultura/Cultura_gral.html">Cultura</a>
+                    
+                    <ul class="submenu">
+                        <li><a href="#musica">Música</a></li>
+                        <li><a href="#Danza">Danza</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <a href="../Deportes/Deportes_gral.html">Deportes</a>
+                    <ul class="submenu">
+                        <li><a href="#futbol">Fútbol</a></li>
+                        <li><a href="#voleibol">Voleibol</a></li>
+                        <li><a href="#basquetbol">Voleibol</a></li>
+                        <li><a href="#gym">Gym</a></li>
+
+                        
+                    </ul>
+                </li>
+                
+                <li><a href="../Comunidad/Comunidad_gral.html">Comunidad</a></li>
+                <li><a href="../Principal.html#contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
+<main>
 
 <section id="noticia" style="max-width: 900px; margin: 50px auto; padding: 20px;">
     <h1 style="text-align: center; margin-bottom: 20px;">Las nuevas propuestas de la carrera de Informática</h1>
@@ -44,14 +72,10 @@
         Por el momento no nos queda más que esperar por el desarrollo exitoso de ambos proyectos y no solo eso, sino también poder
         dar un gran uso tanto al nuevo punto de venta en el <b>CEODON</b> como al renovado Unsito que hacia ya tiempo no regresaba como nuestra querida gaceta universitaria.
     </p>
-
-        <div class="btn">
-             <a href="Noticias_gral.html"><button>Volver</button></a>
-        </div>
-       
     
     
 </section>
+</main>
 <footer>
         <p>&copy; Unsis. Todos los derechos reservados </p>
     </footer>

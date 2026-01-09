@@ -10,40 +10,6 @@ body{
     background-color:white;
 
 }
-header{
-    background-color: #5b0c0c;
-    box-shadow: 0 2px 5px rgb(94, 11, 30);
-}
-nav{
-    background-color: #5b0c0c;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-
-}
-.logo{
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
-   
-}
-
-.nav-links{
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-
-}
-
-.nav-links a{
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
-}
-
 
 #noticias{
     padding: .4rem 2rem;
@@ -169,19 +135,6 @@ footer{
 
 }
 @media screen and (max-width: 430px) {
-
-    nav{
-        flex-direction: column;
-        padding: 1rem;
-    }
-    .nav-links{
-        flex-direction: column;
-        text-align: center;
-        margin-top: 1rem;
-        gap: 1rem;
-    }
-    
-
-
+    /* Nota: Aquí también quité los estilos de nav y .nav-links */
+    /* ya que pertenecen al header */
 }
- 
