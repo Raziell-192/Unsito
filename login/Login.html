@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="src/Styles_login.css">
+</head>
+<body>
+    <div class="form-body">
+        <img src="src/Imagenes/user.png" alt="user">
+        <p class="text">Bienvenido a el unsito</p>
+       <form class="login-form" onsubmit="return login()">
+                <input id="user" type="text" placeholder="User" required>
+                <input id="pass" type="password" placeholder="Contraseña" required>
+                <button type="submit">Iniciar Sesión</button>
+
+        </form>
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
