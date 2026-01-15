@@ -1,6 +1,6 @@
 function loadComponents() {
     // Cargar Header
-    fetch('header.html')
+    fetch('/header.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('header-placeholder').innerHTML = data;
@@ -8,7 +8,7 @@ function loadComponents() {
         });
 
     // Cargar Footer
-    fetch('footer.html')
+    fetch('/footer.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('footer-placeholder').innerHTML = data;
@@ -29,3 +29,5 @@ function setActiveLink() {
 
 // Cargar componentes cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', loadComponents);
+
+
