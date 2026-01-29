@@ -4,7 +4,7 @@ function login(){
 
             if(user == "admin" && pass == "1234"){
             alert("Bienvenido");
-            location.href = "../Principal.html";
+            location.href = "../Admin/Admin.html";
             }else{
                 alert("Datos incorrectos");
             }

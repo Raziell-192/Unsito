@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Admin.css">
+    <title>Panel de Administración</title>
+</head>
+<body>
+    <div class="admin-container">
+        <header class="admin-header">
+            <h1>Panel de Administración</h1>
+            <p>Gestiona el contenido de tu sitio web</p>
+        </header>
+
+        <nav class="admin-nav">
+            <ul class="nav-tabs">
+                <li><button onclick="showSection('memes')" class="active">Memes</button></li>
+                <li><button onclick="showSection('trivia')">Trivia</button></li>
+                <li><button onclick="showSection('encuestas')">Encuestas</button></li>
+                <li><button onclick="showSection('datos')">Datos Curiosos</button></li>
+            </ul>
+        </nav>
+
+        <div class="admin-content">
+            <!-- SECCIÓN MEMES -->
+            <section id="memes-section" class="form-section active-section">
+                <h2>Subir Nuevo Meme</h2>
+                <form id="memeForm">
+                    <div class="form-group">
+                        <label for="memeTitulo">Título del Meme:</label>
+                        <input type="text" id="memeTitulo" placeholder="Ej: Cuando pasa el fin de semana..." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="memeImagen">URL de la Imagen:</label>
+                        <input type="url" id="memeImagen" placeholder="https://ejemplo.com/meme.jpg" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="memeDescripcion">Descripción:</label>
+                        <textarea id="memeDescripcion" placeholder="Describe el contexto del meme..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="memeCategoria">Categoría:</label>
+                        <select id="memeCategoria">
+                            <option value="universidad">Universidad</option>
+                            <option value="estudio">Estudio</option>
+                            <option value="vacaciones">Vacaciones</option>
+                            <option value="examenes">Exámenes</option>
+                            <option value="profesores">Profesores</option>
+                        </select>
+                    </div>
+
+                    <div class="preview">
+                        <h3>Vista Previa:</h3>
+                        <div id="memePreview">La imagen aparecerá aquí...</div>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Guardar Meme</button>
+                    <div class="success-message" id="memeSuccess">Meme guardado exitosamente!</div>
+                </form>
+            </section>
+
+            <!-- SECCIÓN TRIVIA -->
+            <section id="trivia-section" class="form-section">
+                <h2>Crear Nueva Trivia</h2>
+                <form id="triviaForm">
+                    <div class="form-group">
+                        <label for="triviaPregunta">Pregunta:</label>
+                        <input type="text" id="triviaPregunta" placeholder="Ej: ¿Cuál es la capital de Francia?" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="triviaOpcion1">Opción 1 (Correcta):</label>
+                        <input type="text" id="triviaOpcion1" placeholder="Respuesta correcta" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="triviaOpcion2">Opción 2:</label>
+                        <input type="text" id="triviaOpcion2" placeholder="Opción incorrecta" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="triviaOpcion3">Opción 3:</label>
+                        <input type="text" id="triviaOpcion3" placeholder="Opción incorrecta" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="triviaOpcion4">Opción 4:</label>
+                        <input type="text" id="triviaOpcion4" placeholder="Opción incorrecta" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="triviaDificultad">Dificultad:</label>
+                        <select id="triviaDificultad">
+                            <option value="facil">Fácil</option>
+                            <option value="medio">Medio</option>
+                            <option value="dificil">Difícil</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="triviaExplicacion">Explicación:</label>
+                        <textarea id="triviaExplicacion" placeholder="Explica por qué la respuesta es correcta..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Guardar Trivia</button>
+                    <div class="success-message" id="triviaSuccess">Trivia guardada exitosamente!</div>
+                </form>
+            </section>
+
+            <!-- SECCIÓN ENCUESTAS -->
+            <section id="encuestas-section" class="form-section">
+                <h2>Crear Nueva Encuesta</h2>
+                <form id="encuestaForm">
+                    <div class="form-group">
+                        <label for="encuestaTitulo">Título de la Encuesta:</label>
+                        <input type="text" id="encuestaTitulo" placeholder="Ej: ¿Qué prefieres para estudiar?" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="encuestaDescripcion">Descripción:</label>
+                        <textarea id="encuestaDescripcion" placeholder="Describe el propósito de la encuesta..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="encuestaOpcion1">Opción 1:</label>
+                        <input type="text" id="encuestaOpcion1" placeholder="Ej: Música clásica" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="encuestaOpcion2">Opción 2:</label>
+                        <input type="text" id="encuestaOpcion2" placeholder="Ej: Silencio total" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="encuestaOpcion3">Opción 3:</label>
+                        <input type="text" id="encuestaOpcion3" placeholder="Ej: Sonido ambiente" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="encuestaOpcion4">Opción 4:</label>
+                        <input type="text" id="encuestaOpcion4" placeholder="Ej: Música con letra" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="encuestaDuracion">Duración (días):</label>
+                        <input type="number" id="encuestaDuracion" min="1" max="30" value="7">
+                    </div>
+
+                    <button type="submit" class="btn-submit">Publicar Encuesta</button>
+                    <div class="success-message" id="encuestaSuccess">Encuesta publicada exitosamente!</div>
+                </form>
+            </section>
+
+            <!-- SECCIÓN DATOS CURIOSOS -->
+            <section id="datos-section" class="form-section">
+                <h2>Agregar Dato Curioso</h2>
+                <form id="datoForm">
+                    <div class="form-group">
+                        <label for="datoTitulo">Título:</label>
+                        <input type="text" id="datoTitulo" placeholder="Ej: El cerebro humano..." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="datoContenido">Contenido:</label>
+                        <textarea id="datoContenido" placeholder="Escribe el dato curioso aquí..." rows="5" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="datoCategoria">Categoría:</label>
+                        <select id="datoCategoria">
+                            <option value="ciencia">Ciencia</option>
+                            <option value="historia">Historia</option>
+                            <option value="tecnologia">Tecnología</option>
+                            <option value="naturaleza">Naturaleza</option>
+                            <option value="cultura">Cultura</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="datoImagen">URL de Imagen (opcional):</label>
+                        <input type="url" id="datoImagen" placeholder="https://ejemplo.com/imagen.jpg">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="datoFuente">Fuente (opcional):</label>
+                        <input type="text" id="datoFuente" placeholder="Ej: National Geographic">
+                    </div>
+
+                    <button type="submit" class="btn-submit">Guardar Dato Curioso</button>
+                    <div class="success-message" id="datoSuccess">Dato curioso guardado exitosamente!</div>
+                </form>
+            </section>
+        </div>
+
+        <footer class="admin-footer">
+            <p>© 2024 Panel de Administración - Todos los cambios se guardan automáticamente</p>
+        </footer>
+    </div>
+
+    <script>
+        // Manejo de pestañas
+        function showSection(section) {
+            // Ocultar todas las secciones
+            document.querySelectorAll('.form-section').forEach(sec => {
+                sec.classList.remove('active-section');
+                sec.style.display = 'none';
+            });
+            
+            // Remover clase active de todos los botones
+            document.querySelectorAll('.nav-tabs button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Mostrar sección seleccionada
+            document.getElementById(`${section}-section`).style.display = 'block';
+            document.getElementById(`${section}-section`).classList.add('active-section');
+            
+            // Activar botón correspondiente
+            event.target.classList.add('active');
+        }
+
+        // Mostrar vista previa de imagen en memes
+        document.getElementById('memeImagen').addEventListener('input', function() {
+            const preview = document.getElementById('memePreview');
+            if (this.value) {
+                preview.innerHTML = `<img src="${this.value}" alt="Vista previa del meme" style="max-width: 100%; border-radius: 5px;">`;
+            } else {
+                preview.innerHTML = 'La imagen aparecerá aquí...';
+            }
+        });
+
+        // Manejo de formularios (simulación de guardado)
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Obtener ID del formulario
+                const formId = this.id;
+                const successId = formId.replace('Form', 'Success');
+                
+                // Mostrar mensaje de éxito
+                const successMsg = document.getElementById(successId);
+                successMsg.style.display = 'block';
+                
+                // Simular guardado en localStorage (en un caso real sería una petición AJAX)
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData.entries());
+                
+                // Guardar en localStorage según el tipo
+                const tipo = formId.replace('Form', '');
+                const key = `${tipo}_${Date.now()}`;
+                localStorage.setItem(key, JSON.stringify(data));
+                
+                // Limpiar formulario después de 2 segundos
+                setTimeout(() => {
+                    this.reset();
+                    successMsg.style.display = 'none';
+                    
+                    // Limpiar vista previa
+                    if (formId === 'memeForm') {
+                        document.getElementById('memePreview').innerHTML = 'La imagen aparecerá aquí...';
+                    }
+                }, 2000);
+            });
+        });
+
+        // Cargar datos existentes al iniciar
+        function cargarDatosExistentes() {
+            // Esta función cargaría datos existentes si los hubiera
+            console.log('Cargando datos existentes...');
+        }
+
+        // Inicializar
+        window.onload = function() {
+            // Mostrar solo la primera sección
+            document.querySelectorAll('.form-section').forEach((sec, index) => {
+                if (index !== 0) {
+                    sec.style.display = 'none';
+                }
+            });
+            
+            cargarDatosExistentes();
+        }
+    </script>
+</body>
+</html>

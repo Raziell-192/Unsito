@@ -1,17 +1,4 @@
-/* header.css - Estilos unificados para el header en todas las páginas */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
-
-body {
-    line-height: 1.6;
-    color: #333;
-}
-
+/* ===== HEADER PRINCIPAL ===== */
 header {
     background-color: #5b0c0c;
     box-shadow: 0 2px 5px rgba(94, 11, 30, 0.3);
@@ -21,6 +8,7 @@ header {
     z-index: 1000;
 }
 
+/* ===== NAVEGACIÓN ===== */
 nav {
     background-color: #5b0c0c;
     display: flex;
@@ -40,8 +28,7 @@ nav {
 
 .logo:hover {
     transform: rotateY(360deg);
-    transition: 3s ease;
-    perspective: preserve-3d;
+    transition: transform 3s ease;
 }
 
 .logo_uni {
@@ -49,6 +36,7 @@ nav {
     padding: 0;
 }
 
+/* ===== MENÚ PRINCIPAL ===== */
 .nav-links {
     display: flex;
     list-style: none;
@@ -61,6 +49,7 @@ nav {
     font-weight: 500;
     padding: 0.5rem 1rem;
     border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -68,6 +57,7 @@ nav {
     background: rgb(70, 1, 1);
 }
 
+/* ===== SUBMENÚ ===== */
 .menu-item {
     position: relative;
 }
@@ -79,6 +69,8 @@ nav {
     background: #5b0c0c;
     width: 200px;
     display: none;
+    list-style: none;
+    z-index: 1001;
 }
 
 .submenu li {
@@ -90,6 +82,7 @@ nav {
     padding: 10px 15px;
     color: white;
     border-bottom: 1px solid #701616;
+    background: transparent;
 }
 
 .submenu a:hover {
@@ -100,11 +93,7 @@ nav {
     display: block;
 }
 
-/* Ajuste para contenido principal (evita que se oculte detrás del header fijo) */
-main {
-    margin-top: 80px; /* Ajusta según la altura de tu header */
-}
-
+/* ===== RESPONSIVE ===== */
 @media screen and (max-width: 768px) {
     nav {
         flex-direction: column;
@@ -135,58 +124,12 @@ main {
     }
 }
 
-
-
-
-/* FOOTER ESTILOS */
-footer {
-    background-color: #5b0c0c;
-    color: white;
-    text-align: center;
-    padding: 2rem;
-    margin-top: auto; /* Esto empuja el footer hacia abajo */
-    width: 100%;
-}
-
-/* Estilos adicionales para el footer */
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-.footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 1rem;
-    list-style: none;
-}
-
-.footer-links a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-    color: yellow;
-}
-
-.copyright {
-    margin-top: 1.5rem;
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
-
-/* Media queries para el footer */
-@media screen and (max-width: 768px) {
-    footer {
-        padding: 1.5rem 1rem;
+@media screen and (max-width: 430px) {
+    nav {
+        padding: 0.5rem;
     }
     
-    .footer-links {
-        flex-direction: column;
-        gap: 1rem;
+    .logo {
+        font-size: 1.2rem;
     }
 }
