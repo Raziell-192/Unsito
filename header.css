@@ -108,41 +108,28 @@ nav {
 
 /* ===== RESPONSIVE ===== */
 @media screen and (max-width: 768px) {
+    header {
+        position: static;   /* Para telefono y tablet */
+    }
+
     nav {
+        display: flex;
         flex-direction: column;
+        align-items: center;
         padding: 1rem;
     }
-    
-    .nav-links {
-        flex-direction: column;
-        text-align: center;
-        margin-top: 1rem;
-        gap: 1rem;
-        width: 100%;
-    }
-    
-    .logo {
-        margin: 10px 0;
-    }
-    
-    .submenu {
-        position: static;
-        width: 100%;
-        display: none;
-    }
-    
-    .menu-item:hover .submenu {
-        display: block;
-        position: static;
-    }
-}
 
-@media screen and (max-width: 430px) {
-    nav {
-        padding: 0.5rem;
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+        padding: 0;
     }
-    
-    .logo {
-        font-size: 1.2rem;
+
+    .nav-links li a {
+        display: block;
+        width: 100%;
+        padding: 15px 0;
     }
 }
