@@ -10,6 +10,11 @@
             color: white;
             line-height: 1.6;
         }
+
+        main{
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
         
         .contenedor{
             max-width: 1200px;
@@ -32,6 +37,12 @@
         footer{
             background: linear-gradient(to top, #6B12B0, #030300);
         }
+
+
+.nav-links a:hover {
+    color: floralwhite;
+    background: linear-gradient(to top, #030300,#7f4ca7);
+}
 
         .contenido_general{
             border: 1px solid white;    

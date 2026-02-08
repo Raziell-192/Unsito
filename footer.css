@@ -6,6 +6,8 @@ footer {
     width: 100%;
 }
 
+
+
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -26,6 +28,9 @@ footer {
     margin: 1.5rem 0;
     list-style: none;
     flex-wrap: wrap;
+}
+.footer-section ul{
+    list-style: none;
 }
 
 .footer-links a {

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calenda Universitaria</title>
+    <link rel="stylesheet" href="/header.css">
+    <link rel="stylesheet" href="/footer.css">
+    <link rel="stylesheet" href="/template.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    
+    <main>
+        <div class="contenedor">
+            <article class="contenido">
+                
+                <!-- Título -->
+                <h1 class="titulo">Tradición y Alegría Universitaria</h1>
+                
+                <!-- Información adicional -->
+                <div class="info">
+                    <span class="fecha">16 Dic 2025</span>
+                    <span class="categoria">Eventos Culturales</span>
+                    <!-- <span class="lugar">[LUGAR DEL EVENTO]</span> -->
+                </div>
+                
+                <!-- Imagen destacada aqui eligen si poner galeria imagen o carrusel-->
+                <!-- <div class="imagen">
+                    <img src="/Cultura/src/icon/calenda/calenda5.jpeg" alt="calenda" loading="lazy">
+                </div> -->
+
+                <!-- CARRUSEL OPTIMIZADO
+                <div class="carrusel-noticia" id="miCarrusel">
+                    <div class="slides"> -->
+                        <!-- Slide 1 -->
+                        <!-- <div class="slide">
+                            <img src="/Cultura/src/icon/calenda/calenda.jpeg" alt="[DESCRIPCIÓN 1]" loading="lazy">
+                            <div class="slide-caption">Foto 1</div>
+                        </div> -->
+                        <!-- Slide 2 -->
+                        <!-- <div class="slide">
+                            <img src="/Cultura/src/icon/calenda/calenda2.jpeg" alt="[DESCRIPCIÓN 2]" loading="lazy">
+                            <div class="slide-caption">Foto 2</div>
+                        </div> -->
+                        <!-- Slide 3 -->
+                        <!-- <div class="slide"> -->
+                            <!-- <img src="/Cultura/src/icon/calenda/calenda3.jpeg" alt="[DESCRIPCIÓN 3]" loading="lazy">
+                            <div class="slide-caption">Foto 3</div>
+                        </div>
+                    </div>
+                     -->
+                    <!-- Controles simples -->
+                    <!-- <div class="carrusel-controles">
+                        <span class="activo" onclick="mostrarSlide(0)"></span>
+                        <span onclick="mostrarSlide(1)"></span>
+                        <span onclick="mostrarSlide(2)"></span>
+                    </div> -->
+                    
+                    <!-- Flechas (solo desktop) -->
+                    <!-- <button class="carrusel-flecha anterior" onclick="cambiarSlide(-1)">‹</button>
+                    <button class="carrusel-flecha siguiente" onclick="cambiarSlide(1)">›</button>
+                </div> -->
+
+                 <!-- CARRUSEL CON AUTO-AVANCE -->
+                <div class="carrusel-noticia" id="miCarrusel">
+                    <div class="slides">
+                        <!-- Slide 1 -->
+                        <div class="slide">
+                            <img src="/Cultura/src/icon/calenda/calenda.jpeg" alt="" loading="lazy">
+                            <div class="slide-caption">[Foto 1</div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="slide">
+                            <img src="/Cultura/src/icon/calenda/calenda2.jpeg" alt="" loading="lazy">
+                            <div class="slide-caption">Foto 2</div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="slide">
+                            <img src="/Cultura/src/icon/calenda/calenda3.jpeg" alt="" loading="lazy">
+                            <div class="slide-caption">Foto 3</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Botón de pausa/reanudar -->
+                    <button class="carrusel-pause" id="btnPause" title="Pausar carrusel">
+                        Pausar
+                    </button>
+                    
+                    <!-- Controles de navegación -->
+                    <div class="carrusel-controles">
+                        <span class="activo" onclick="mostrarSlide(0)"></span>
+                        <span onclick="mostrarSlide(1)"></span>
+                        <span onclick="mostrarSlide(2)"></span>
+                    </div>
+                    
+                    <!-- Flechas de navegación -->
+                    <button class="carrusel-flecha anterior" onclick="cambiarSlide(-1)">‹</button>
+                    <button class="carrusel-flecha siguiente" onclick="cambiarSlide(1)">›</button>
+                </div>
+                
+                <!-- Texto del contenido -->
+                <div class="texto">
+                    <p>[INTRODUCCIÓN - Breve descripción de la calenda, su significado y propósito en la comunidad universitaria]</p>
+                    
+                    <p>[DETALLES DEL EVENTO - Fecha, hora, recorrido, participantes esperados. Menciona si es organizada por: <strong>alguna facultad, grupo estudiantil o dependencia universitaria</strong>]</p>
+                    
+                    <p>[ACTIVIDADES DESTACADAS - Describe elementos como: comparsas, música en vivo, danzas tradicionales, carros alegóricos, etc. Ejemplo: "La <strong>comparsa de la Facultad de Medicina</strong> presentará..." o "El <strong>carro alegórico de Ingeniería</strong> mostrará..."]</p>
+                    
+                    <p>[PARTICIPACIÓN ESTUDIANTIL - Información sobre cómo los estudiantes pueden participar, si hay convocatorias abiertas, ensayos, o requisitos para formar parte de las comparsas]</p>
+                    
+                    <p>[SIGNIFICADO CULTURAL - Explica la importancia de esta tradición en la universidad, si conmemora alguna fecha especial o forma parte de celebraciones mayores]</p>
+                    
+                    <p>[INFORMACIÓN ADICIONAL - Detalles sobre: seguridad, acceso al público, estaciones de hidratación, recomendaciones para asistentes, o actividades complementarias]</p>
+                </div>
+                
+                <!-- Sección de información práctica -->
+                <!-- <div class="info-practica">
+                    <h3>Información Práctica</h3>
+                    <ul>
+                        <li><strong>Fecha:</strong> [FECHA COMPLETA]</li>
+                        <li><strong>Hora de inicio:</strong> [HORA]</li>
+                        <li><strong>Punto de encuentro:</strong> [LUGAR DE INICIO]</li>
+                        <li><strong>Recorrido:</strong> [DESCRIPCIÓN BREVE DEL RECORRIDO]</li>
+                        <li><strong>Evento:</strong> Gratuito y abierto a toda la comunidad universitaria</li>
+                    </ul>
+                </div> -->
+                
+                <!-- Galería de imágenes (opcional) -->
+                <div class="galeria">
+                    <h3>Galería de Calenda</h3>
+                    <div class="imagenes-galeria">
+                        <img src="/Cultura/src/icon/calenda/calenda.jpeg" alt="Calenda anterior 1" loading="lazy">
+                        <img src="/Cultura/src/icon/calenda/calenda2.jpeg" alt="Calenda anterior 2" loading="lazy">
+                        <img src="/Cultura/src/icon/calenda/calenda3.jpeg" alt="Calenda anterior 3" loading="lazy">
+                        <img src="/Cultura/src/icon/calenda/calenda4.jpeg" alt="Calenda anterior 3" loading="lazy">
+                        <img src="/Cultura/src/icon/calenda/calenda5.jpeg" alt="Calenda anterior 3" loading="lazy">
+
+                    </div>
+                </div>
+                
+                <!-- Botón de volver -->
+                <!-- <div class="btn">
+                    <a href="Noticias_gral.html"><button>Volver</button></a>
+                </div>
+                 -->
+            </article>
+        </div>
+    </main>
+    
+    <div id="footer-placeholder"></div>
+    <script src="../script.js"></script>
+    <script src="scriptCultura.js"></script>
+</body>
+</html>

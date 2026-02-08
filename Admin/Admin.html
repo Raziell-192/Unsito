@@ -3,26 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Admin.css">
     <title>Panel de Administración</title>
+    <link rel="stylesheet" href="Admin.css">
 </head>
 <body>
     <div class="admin-container">
         <header class="admin-header">
             <h1>Panel de Administración</h1>
-            <p>Gestiona el contenido de tu sitio web</p>
+            <p>Bienvenido</p>
         </header>
 
         <nav class="admin-nav">
             <ul class="nav-tabs">
-                <li><button onclick="showSection('memes')" class="active">Memes</button></li>
+                <li><button onclick="showSection('bienvenida')" class="active">Bienvenida</button></li>
+                <li><button onclick="showSection('memes')">Memes</button></li>
                 <li><button onclick="showSection('trivia')">Trivia</button></li>
-                <li><button onclick="showSection('encuestas')">Encuestas</button></li>
-                <li><button onclick="showSection('datos')">Datos Curiosos</button></li>
+                <li><button onclick="showSection('encuestas')">Encuesta</button></li>
+                <li><button onclick="showSection('datos')">Dato Curioso</button></li>
+                <li><button onclick="showSection('tiempo')">Antes y Ahora</button></li>
+                <li><button onclick="showSection('random')">Pregunta Random</button></li>
             </ul>
         </nav>
 
-        <div class="admin-content">
+         <div class="admin-content">
             <!-- SECCIÓN MEMES -->
             <section id="memes-section" class="form-section active-section">
                 <h2>Subir Nuevo Meme</h2>
@@ -197,94 +200,10 @@
         </div>
 
         <footer class="admin-footer">
-            <p>© 2024 Panel de Administración - Todos los cambios se guardan automáticamente</p>
+            <p>© 2026 Panel de Administración - Todos los cambios se guardan automáticamente</p>
         </footer>
     </div>
 
-    <script>
-        // Manejo de pestañas
-        function showSection(section) {
-            // Ocultar todas las secciones
-            document.querySelectorAll('.form-section').forEach(sec => {
-                sec.classList.remove('active-section');
-                sec.style.display = 'none';
-            });
-            
-            // Remover clase active de todos los botones
-            document.querySelectorAll('.nav-tabs button').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            // Mostrar sección seleccionada
-            document.getElementById(`${section}-section`).style.display = 'block';
-            document.getElementById(`${section}-section`).classList.add('active-section');
-            
-            // Activar botón correspondiente
-            event.target.classList.add('active');
-        }
-
-        // Mostrar vista previa de imagen en memes
-        document.getElementById('memeImagen').addEventListener('input', function() {
-            const preview = document.getElementById('memePreview');
-            if (this.value) {
-                preview.innerHTML = `<img src="${this.value}" alt="Vista previa del meme" style="max-width: 100%; border-radius: 5px;">`;
-            } else {
-                preview.innerHTML = 'La imagen aparecerá aquí...';
-            }
-        });
-
-        // Manejo de formularios (simulación de guardado)
-        document.querySelectorAll('form').forEach(form => {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Obtener ID del formulario
-                const formId = this.id;
-                const successId = formId.replace('Form', 'Success');
-                
-                // Mostrar mensaje de éxito
-                const successMsg = document.getElementById(successId);
-                successMsg.style.display = 'block';
-                
-                // Simular guardado en localStorage (en un caso real sería una petición AJAX)
-                const formData = new FormData(this);
-                const data = Object.fromEntries(formData.entries());
-                
-                // Guardar en localStorage según el tipo
-                const tipo = formId.replace('Form', '');
-                const key = `${tipo}_${Date.now()}`;
-                localStorage.setItem(key, JSON.stringify(data));
-                
-                // Limpiar formulario después de 2 segundos
-                setTimeout(() => {
-                    this.reset();
-                    successMsg.style.display = 'none';
-                    
-                    // Limpiar vista previa
-                    if (formId === 'memeForm') {
-                        document.getElementById('memePreview').innerHTML = 'La imagen aparecerá aquí...';
-                    }
-                }, 2000);
-            });
-        });
-
-        // Cargar datos existentes al iniciar
-        function cargarDatosExistentes() {
-            // Esta función cargaría datos existentes si los hubiera
-            console.log('Cargando datos existentes...');
-        }
-
-        // Inicializar
-        window.onload = function() {
-            // Mostrar solo la primera sección
-            document.querySelectorAll('.form-section').forEach((sec, index) => {
-                if (index !== 0) {
-                    sec.style.display = 'none';
-                }
-            });
-            
-            cargarDatosExistentes();
-        }
-    </script>
+    <script src="Admin.js"></script>
 </body>
 </html>

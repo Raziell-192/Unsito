@@ -22,75 +22,99 @@
             <div class="gaceta-container">
 
                 <section class="portada">
-                    <h1>Gaceta Universitaria</h1>
-                    <p>Universidad de la Sierra Sur</p>
-                    <p>UNSITO</p>
+                    <div class="portada-contenido">
+                        <h1>Gaceta Universitaria</h1>
+                        <p>Universidad de la Sierra Sur</p>
+                        <p>UNSITO</p>
+                    </div>
                 </section>
 
                 <section class="seccion">
                     <h2>Bienvenida</h2>
-                    <div class="tarjeta">
+                    <div class="contenido" id="bienvenida">
+                        
                         <p><strong>Mensaje a la comunidad estudiantil</strong></p>
-                        <p>En esta pagina buscamos recopilar lo mejor de nueatra Uni<p>
+                        <p>En esta pagina buscamos recopilar lo mejor de nuestra Uni</p>
+                        <p>Aqui va a cambiarse el contenido desde JS</p>
+
                     </div>
                 </section>
 
-                <section id="memes" class="seccion">
+                <section class="seccion">
                     <h2>Memes UNSIS</h2>
-                    <div class="meme-item">
-                        <img src="Memes/mirada_mil_yardas.jpg" alt="Meme universitario">
-                        <p class="meme-texto">"Cuando el profe dice 'traigan calculadora' y nadie trajo"</p>
-                    </div>    
-
+                    <div class="contenido" id="memes">
+                        <div class="meme-item">
+                            <img src="Memes/mirada_mil_yardas.jpg" alt="Meme universitario">
+                            <p class="meme-texto">"Cuando el profe dice 'traigan calculadora' y nadie trajo"</p>
+                        </div>
+                    </div>
+                    
                     <div style="text-align: center; margin-top: 2rem;">
+
+                    <p>Aqui va a cambiarse el contenido desde JS</p>
+
                         <a href="Memes/memes.html" class="cta-button">Ver Todos los Memes</a>
                     </div>
                 </section>
 
-                <section id="trivia" class="seccion">
-                    <h2>Trivia UNSIS</h2>                   
-                </section>
-
-                <section id="encuestas" class="seccion">
-                    <h2>Encuestas Relámpago</h2>
-                </section>
-
-                <section id="dato_curioso" class="seccion"> 
-                    <h2>Dato curioso</h2>
-
-                    <div class="tarjeta">
-                        <p><strong>¿Cómo funciona la energía solar?</strong></p>
-                        <p><strong>En simple:</strong> Como una hoja de árbol gigante que atrapa luz del sol y la convierte en electricidad en lugar de comida.</p>
+                <section class="seccion">
+                    <h2>Trivia UNSIS</h2>
+                    <div class="contenido" id="trivia">
+                        <p>Aqui va a cambiarse el contenido desde JS</p>
                     </div>
-
-
                 </section>
 
-                <section id="antes_ahora" class="seccion">
+                <section class="seccion">
+                    <h2>Encuestas Relámpago</h2>
+                    <div class="contenido" id="encuestas">
+                        <p>aqui va a cambiar desde JS</p>
+                    </div>
+                </section>
+
+                <section class="seccion"> 
+                    <h2>Dato curioso</h2>
+                    <div class="contenido" id="dato-curioso">
+                        <p>Aqui va a cambiar desde JS</p>
+                    </div>
+                </section>
+
+                <section class="seccion">
                     <h2>Antes vs Ahora</h2>
+                    <div class="contenido" id="antes-ahora">
+                        <p>Va a cambiar desde JS</p>
+                    </div>
                 </section>
 
-                <section id="random_questions" class="seccion">
+                <section class="seccion">
                     <h2>Preguntas Random Diarias</h2>
+                    <div class="contenido" id="random-questions">
+                        <p>Va a cambiar desde JS</p>
+                    </div>
                 </section>  
+                
                 <section class="gaceta-footer">
-                    <h3>Gaceta Universitaria UNSIS</h3>
-                    <p>¿Quieres aparecer en la próxima edición? Envía tu contenido a: <a href="form_contenido.html">UNSITO</a> </p>
+                    <div>
+                        <h3>Gaceta Universitaria UNSIS</h3>
+                        <p>¿Quieres compartir tus propias ideas? Envía tu contenido a : <a href="form_contenido.html">UNSITO</a></p>
+                    </div>
                 </section>
             </div>
         </section>
 
-        <section id="relevante">
+        <section>
             <div class="content_relevante">
                 <section class="seccion">
                     <h2>Lo más relevante</h2>
+                    <div class="contenido" id="relevante">
+                        <p>Va a cambiar desde JS</p>
+                    </div>
                 </section>
             </div>
-               
         </section>
+        
         <section id="contacto">
             <h2 style="text-align: center;">Contacto</h2>
-            <div style="max-width: 400px; margin: auto; font-size: 16px;">
+            <div class="contenido-dinamico" data-seccion="contacto" style="max-width: 400px; margin: auto; font-size: 16px;">
                 <p><strong>Dirección:</strong><br>
                 Guillermo Rojas Mijangos s/n, Cd Universitaria, 70800 Miahuatlán de Porfirio Díaz, Oax.</p>
 
@@ -112,7 +136,42 @@
             </div>
         </section>
     </main>
-        <div id="footer-placeholder"></div>
+    
+    <!-- Panel de administración simplificado -->
+    <!-- <div id="admin-panel" style="display: none; position: fixed; bottom: 20px; right: 20px; background: white; padding: 20px; border: 2px solid #5b0c0c; border-radius: 10px; z-index: 9999; max-width: 400px;">
+        <h3 style="color: #5b0c0c; margin-bottom: 15px;"> Editor de Contenido</h3>
+        
+        <div class="form-group">
+            <label for="admin-seccion">Sección a editar:</label>
+            <select id="admin-seccion" class="admin-select">
+                <option value="">-- Selecciona --</option>
+                <option value="portada">Portada Gaceta</option>
+                <option value="bienvenida">Bienvenida</option>
+                <option value="memes">Meme destacado</option>
+                <option value="trivia">Trivia del día</option>
+                <option value="encuestas">Encuesta actual</option>
+                <option value="dato_curioso">Dato curioso</option>
+                <option value="antes_ahora">Antes vs Ahora</option>
+                <option value="random_questions">Pregunta del día</option>
+                <option value="relevante">Lo más relevante</option>
+                <option value="contacto">Información de contacto</option>
+            </select>
+        </div>
+        
+        <div id="admin-form-container" style="margin-top: 15px;">
+            Los formularios dinámicos aparecerán aquí -->
+        <!-- </div>
+        
+        <div id="admin-mensaje" style="display: none; margin-top: 10px; padding: 10px; border-radius: 5px;"></div>
+    </div>
+    
+    
+    
+    
+    <script src="contenidoManager.js"></script> --> 
+    <div id="footer-placeholder"></div>
     <script src="script.js"></script>
+    <script src="Admin/Admin.js"></script>
+    
 </body>
 </html>

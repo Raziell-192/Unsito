@@ -1,17 +1,9 @@
+/* ===== RESET Y ESTILOS BASE ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Arial', sans-serif;
-}
-
-.link_redes a{
-    color: black;
-}
-
-a{
-    color: white;
-    cursor: pointer;
 }
 
 body {
@@ -20,12 +12,42 @@ body {
     background: #f5f5f5;
 }
 
-header {
+main {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+/* ===== ENLACES ===== */
+a {
+    color: white;
+    cursor: pointer;
+    text-decoration: none; /* Agregado para consistencia */
+}
+
+.link_redes a {
+    color: black;
+}
+
+/* ===== COLORES PRINCIPALES (REUTILIZABLES) ===== */
+:root {
+    --primary-color: #5b0c0c;
+    --primary-dark: #050505;
+    --primary-darker: #701616;
+    --primary-light: #642727;
+    --text-light: white;
+    --text-dark: #333;
+    --shadow: 0 2px 5px rgba(94, 11, 30, 0.3);
+}
+
+/* ===== HEADER Y NAVEGACIÓN ===== */
+header, nav {
+    background-color: var(--primary-color);
     display: flex;
-    background-color: #5b0c0c;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 5px rgba(94, 11, 30, 0.3);
+}
+
+header {
+    box-shadow: var(--shadow);
     position: fixed;
     width: 100%;
     top: 0;
@@ -33,27 +55,24 @@ header {
 }
 
 nav {
-    background-color: #5b0c0c;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 1rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
 }
 
+/* ===== LOGO ===== */
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: white;
+    color: var(--text-light);
     margin: 10px;
 }
-.logo:hover{
+
+.logo:hover {
     transform: rotateY(360deg);
     transition: 3s ease;
     perspective: preserve-3d;
-
-
 }
 
 .logo_uni {
@@ -61,6 +80,7 @@ nav {
     padding: 0;
 }
 
+/* ===== MENÚ DE NAVEGACIÓN ===== */
 .nav-links {
     display: flex;
     list-style: none;
@@ -68,22 +88,53 @@ nav {
 }
 
 .nav-links a {
-    text-decoration: none;
-    color: white;
     font-weight: 500;
     padding: 0.5rem 1rem;
     border-radius: 5px;
 }
 
 .nav-links a:hover {
-    color:yellow;
+    color: yellow;
     background: rgb(70, 1, 1);
 }
 
+/* ===== MENÚ DESPLEGABLE ===== */
+.menu-item {
+    position: relative;
+}
+
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--primary-color);
+    width: 200px;
+    display: none;
+}
+
+.submenu li {
+    width: 100%;
+}
+
+.submenu a {
+    display: block;
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--primary-darker);
+}
+
+.submenu a:hover {
+    background: var(--primary-dark);
+}
+
+.menu-item:hover .submenu {
+    display: block;
+}
+
+/* ===== SECCIÓN HERO ===== */
 #hero {
     padding-top: 2rem;
     min-height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('img_principal/UNSIS.jpg');
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img_principal/UNSIS.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -92,9 +143,8 @@ nav {
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: white;
+    color: var(--text-light);
     padding: 0 1rem;
-    margin-top: 60px;
 }
 
 #hero h1 {
@@ -109,22 +159,39 @@ nav {
     margin: 0 auto;
 }
 
-.cta-button {
-    background-color: #642727;
-    color: white;
+
+
+/* ===== BOTONES (ESTILOS COMUNES) ===== */
+.cta-button, .noticias-card button {
+    background-color: var(--primary-color);
+    color: var(--text-light);
     border: none;
-    padding: 1rem 2rem;
     border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button {
+    padding: 1rem 2rem;
     margin-top: 2rem;
     font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
 }
 
 .cta-button:hover {
     background-color: hsl(0, 98%, 22%);
 }
 
+.noticias-card button {
+    margin: 0 1rem 1rem;
+    padding: 0.7rem 1.5rem;
+}
+
+.noticias-card button:hover {
+    background-color: var(--primary-darker);
+}
+
+/* ===== SECCIÓN NOTICIAS ===== */
 #noticias {
     padding: 4rem 2rem;
     max-width: 1200px;
@@ -136,7 +203,7 @@ nav {
     text-align: center;
     margin-bottom: 3rem;
     font-size: 3rem;
-    color: #5b0c0c;
+    color: var(--primary-color);
     position: relative;
 }
 
@@ -154,8 +221,6 @@ nav {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-
-
 .noticias-card img {
     width: 100%;
     height: 200px;
@@ -164,12 +229,12 @@ nav {
 
 .noticias-card h3 {
     padding: 1rem;
-    color: #333;
+    color: var(--text-dark);
     font-size: 1.3rem;
 }
 
 .informacion {
-    color: #5b0c0c;
+    color: var(--primary-color);
     font-weight: bold;
     padding: 0 1rem;
     font-size: 0.9rem;
@@ -181,22 +246,7 @@ nav {
     line-height: 1.5;
 }
 
-.noticias-card button {
-    margin: 0 1rem 1rem;
-    padding: 0.7rem 1.5rem;
-    background-color: #5b0c0c;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-weight: bold;
-}
-
-.noticias-card button:hover {
-    background-color: #701616;
-}
-
+/* ===== SECCIÓN CONTACTO ===== */
 #contacto {
     background-color: #f9f9f9;
     padding: 4rem 2rem;
@@ -206,37 +256,35 @@ nav {
     text-align: center;
     margin-bottom: 2rem;
     font-size: 2.5rem;
-    color: #5b0c0c;
+    color: var(--primary-color);
 }
 
-/* footer {
-    background-color: #5b0c0c;
-    color: white;
-    text-align: center;
-    padding: 2rem;
-} */
-
-
-
-.gaceta-container {
-    max-width: 80%;
-    margin: 2rem auto;
+/* ===== GACETA UNIVERSITARIA ===== */
+.gaceta-container, .content_relevante {
     background: white;
     box-shadow: 0 0 20px gray;
     border-radius: 20px;
     overflow: hidden;
 }
-.gaceta-footer {
-    background: #5b0c0c;
-    color: white;
-    padding: 2rem;
+
+.gaceta-container {
+    max-width: 80%;
+    margin: 2rem auto;
+}
+
+.content_relevante {
+    width: 80%;
+    margin: 2.5rem auto;
+}
+
+.portada, .gaceta-footer {
+    background: var(--primary-color);
+    color: var(--text-light);
     text-align: center;
 }
+
 .portada {
-    background: #5b0c0c;
-    color: white;
     padding: 3rem 2rem;
-    text-align: center;
 }
 
 .portada h1 {
@@ -244,25 +292,38 @@ nav {
     margin-bottom: 0.5rem;
 }
 
+.gaceta-footer {
+    padding: 2rem;
+}
+
+/* ===== SECCIONES GENERALES ===== */
 .seccion {
     padding: 2rem;
-    border-bottom: 1px solid #eee;
+    transition: transform 0.25s ease, box-shadow 0.3s ease;
+
+}
+
+.seccion:hover{
+    transform: translateY(-10px);
+    border-radius: 5px;
+    box-shadow: 0 8px 16px black; 
 }
 
 .seccion h2 {
-    color: #5b0c0c;
+    color: var(--primary-color);
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid black;
 }
 
 .tarjeta {
+    border: solid blueviolet 2px;
     background: beige;
     border-radius: 10px;
     padding: 1.5rem;
-    
 }
 
+/* ===== ELEMENTOS DE MEMES ===== */
 .meme-item {
     text-align: center;
     margin-bottom: 2rem;
@@ -281,49 +342,22 @@ nav {
     color: black;
 }
 
+/* ===== Espacios dimanicoas ===== */
+.contenido{
+    /* border: solid black 1px; lo puse para ver ka parte que lo delimitaba */
+    background: beige;
+    border-radius: 15px;
+    padding: 1.5rem;
+}   
 
-
-.content_relevante{
-    width: 80%;
-    background-color: white;
-    margin: 2.5rem auto;
-    border-radius: 20px;
-    box-shadow: 0 0 20px gray;
-    overflow:hidden;
-}
-
-
-
-
-
-.menu-item {
-    position: relative;
-}
-
-.submenu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #5b0c0c;
-    width: 200px;
-    display: none;
-}
-
-.submenu li {
-    width: 100%;
-}
-
-.submenu a {
-    display: block;
-    padding: 10px 15px;
+/* ===== ESTILOS NO UTILIZADOS (COMENTADOS) ===== */
+/*
+footer {
+    background-color: #5b0c0c;
     color: white;
-    border-bottom: 1px solid #701616;
+    text-align: center;
+    padding: 2rem;
 }
 
-.submenu a:hover {
-    background: #420505;
-}
-
-.menu-item:hover .submenu {
-    display: block;
-}
+Este footer está comentado en tu HTML original, por eso lo dejo comentado aquí también.
+*/

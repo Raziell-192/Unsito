@@ -1,20 +1,28 @@
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Arial', sans-serif;
 }
 
-body {
+
+/* body {
     align-items: center;
     justify-content: space-between;
     line-height: 1.6;
     color: #333;
     background: #f5f5f5;
     
-}
-#noticias{/* le cambiaré el name a "card1" para hacer una receta universal "palabras de chuchin"*/
+} */
+
+/* body {  este es el body de la pagia principal, si se desea cambiar solo se modifica esta parte en un css nuevo para dicha pagina
+    line-height: 1.6;
+    color: #333;
+    background: #f5f5f5;
+} */
+
+
+.noticias{
     padding: 50px;
     max-width: 1200px;
     margin: 0 auto;
@@ -24,10 +32,10 @@ main {
     padding-top: 5rem;
     padding-bottom: 3rem;
 }
-#noticias h2{
+/* #noticias h2{
     text-align: center;
     margin-bottom: 2rem;
-}
+} */
 
 .noticias-grid{
     display: grid;
@@ -39,11 +47,13 @@ main {
     background-color:white;
     border-radius: 10px;
     border: 1px solid darkgray;
+    /* transition: 0.3s ease; */
+    transition: transform 0.25s ease, box-shadow 0.3s ease;
+
   
 }
 .noticias-card:hover{
-    transform: translateY(-15px);
-    transition: 0.3s ease;
+    transform: translateY(-10px);
     box-shadow: 0 8px 16px black; 
 }
 .noticias-card img{
@@ -65,6 +75,7 @@ main {
 
 }
 .descripcion{
+    text-align: justify;
     padding: 20px;
     color: #666;
 }
@@ -84,7 +95,7 @@ main {
      background-color:#2c1515;
 }
 
-.btn button{
+/* .btn button{
     background-color: #642727;
     color: white;
     border: none;
@@ -93,12 +104,12 @@ main {
     cursor: pointer;
     margin-top: 2rem;
    
-}
-.btn button:hover{
+} */
+/* .btn button:hover{
      background-color: #000;
-}
+} */
 
-#contacto{
+/* #contacto{
     background-color: #f9f9f9;
     padding: 4rem 2rem;
 
@@ -106,16 +117,16 @@ main {
 #contacto h2{
     text-align: center;
     margin-bottom: 2rem;
-}
-form{
+} */
+/* form{
     max-width: 600px;
     margin: 0 auto;
     display: flex;
     flex-direction:column ;
     gap: 1rem;
-}
+} */
 
-input,textarea{
+/* input,textarea{
     padding: .8rem;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -132,7 +143,7 @@ form button{
     padding: 1rem;
     border-radius: 5px;
     cursor: pointer;
-}
+} */
 
 /* footer{
     background-color: #5b0c0c;
@@ -141,9 +152,12 @@ form button{
     padding: 1rem;
 
 } */
-.contenido{
+/* .contenido{
     background-color: #5b0c0c;
     margin: 20px;
     align-items: center;
     width: 60%;
-}
+} */
+
+
+/* todo lo comentado es code que en un incio fue contemplado, pero con el desarrollo del proyecto quedó obsoleto */

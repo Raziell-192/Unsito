@@ -1,0 +1,524 @@
+/* ===== RESET Y ESTILOS BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+body {
+    line-height: 1.6;
+    color: #333;
+    background: #f5f5f5;
+}
+
+main {
+    padding-top: 6rem;
+    padding-bottom: 1rem;
+}
+
+.contenido {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.contenedor{
+    max-width: 900px;
+    margin: 2rem auto;
+}
+
+/* ===== TÍTULO ===== */
+.titulo {
+    color: black;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* ===== INFORMACIÓN ===== */
+.info {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 25px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.categoria {
+    background-color:  #5b0c0c;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+.fecha{
+    background-color: antiquewhite;
+    color: black;
+    padding: 5px 5px;
+    border-radius: 10px;
+}
+
+/* ===== IMAGEN ===== */
+.imagen {
+    margin: 25px 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===== TEXTO ===== */
+.texto {
+    font-size: 1.1rem;
+    margin: 25px 0;
+}
+
+.texto p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.texto strong {
+    color: #5b0c0c;
+}
+
+
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .contenedor{
+        margin: 70px auto 30px;
+        padding: 0 15px;
+    }
+    
+    .contenido {
+        padding: 20px;
+    }
+    
+    .titulo {
+        font-size: 1.7rem;
+    }
+    
+    .info {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo {
+        font-size: 1.5rem;
+    }
+    
+    .texto {
+        font-size: 1rem;
+    }
+}
+/*Intendo de galeria*/
+
+/* Estilos para la galería */
+.galeria {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+
+.galeria h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.imagenes-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    justify-items: center;
+}
+
+.imagenes-galeria img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imagenes-galeria img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+    .imagenes-galeria {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+    
+    .imagenes-galeria img {
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .imagenes-galeria {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+ 
+
+
+         /* ===== CARRUSEL CON AUTO-AVANCE ===== */
+        .carrusel-noticia {
+            position: relative;
+            width: 100%;
+            max-height: 500px;
+            overflow: hidden;
+            border-radius: 12px;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Contenedor de slides */
+        .carrusel-noticia .slides {
+            display: flex;
+            width: 300%; /* 3 imágenes = 300% */
+            height: 500px;
+            transition: transform 0.6s ease-in-out;
+        }
+        
+        /* Cada slide */
+        .carrusel-noticia .slide {
+            width: 33.333%; /* Ancho de 1 imagen */
+            height: 100%;
+            position: relative;
+            flex-shrink: 0;
+        }
+        
+        /* Imagen dentro del slide */
+        .carrusel-noticia .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        /* Pie de foto para cada imagen */
+        .carrusel-noticia .slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 20px;
+            font-size: 1rem;
+            text-align: center;
+        }
+        
+        /* Controles de navegación */
+        .carrusel-controles {
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            z-index: 10;
+        }
+        
+        .carrusel-controles span {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            border: 2px solid white;
+            transition: all 0.3s ease;
+        }
+        
+        .carrusel-controles span.activo {
+            background: white;
+            transform: scale(1.2);
+        }
+        
+        /* Flechas de navegación */
+        .carrusel-flecha {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.4);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            z-index: 10;
+            display: none;
+            transition: background 0.3s;
+        }
+        
+        .carrusel-flecha:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+        
+        .carrusel-flecha.anterior {
+            left: 15px;
+        }
+        
+        .carrusel-flecha.siguiente {
+            right: 15px;
+        }
+        
+        /* Botón de pausa/reanudar */
+        .carrusel-pause {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .carrusel-pause:hover {
+            background: rgba(0, 0, 0, 0.8);
+            transform: scale(1.1);
+        }
+        
+        /* Mostrar controles en hover (solo desktop) */
+        @media (min-width: 768px) {
+            .carrusel-noticia:hover .carrusel-flecha {
+                display: block;
+            }
+            
+            .carrusel-noticia:hover .carrusel-pause {
+                opacity: 1;
+            }
+            
+            .carrusel-pause {
+                opacity: 0.5;
+            }
+        }
+        
+        /* Mostrar siempre en móvil */
+        @media (max-width: 767px) {
+            .carrusel-flecha {
+                display: block;
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .carrusel-flecha.anterior {
+                left: 10px;
+            }
+            
+            .carrusel-flecha.siguiente {
+                right: 10px;
+            }
+            
+            .carrusel-pause {
+                width: 32px;
+                height: 32px;
+                font-size: 0.9rem;
+                top: 10px;
+                right: 10px;
+            }
+        }
+        
+        /* Responsive para altura */
+        @media (max-width: 768px) {
+            .carrusel-noticia,
+            .carrusel-noticia .slides {
+                max-height: 400px;
+                height: 400px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .carrusel-noticia,
+            .carrusel-noticia .slides {
+                max-height: 300px;
+                height: 300px;
+            }
+        }
+/* ============================================================================
+   ===== ESTILOS NO UTILIZADOS EN ESTA PÁGINA (COMENTADOS) ====================
+   ============================================================================
+   Los siguientes estilos NO se utilizan en la página de noticia individual.
+   Pertenecen a otras páginas como noticias.html o contacto.html.
+   ============================================================================ */
+
+/*
+=== ESTILOS PARA PÁGINA DE LISTA DE NOTICIAS (noticias.html) ===
+
+#noticias {
+    padding: .4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    max-height: 100vh;
+}
+
+#noticias h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.noticias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.noticias-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.noticias-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.noticias-card h3 {
+    padding: 1rem;
+    color: #333;
+}
+
+.informacion {
+    color: #5b0c0c;
+    font-weight: bold;
+    padding: 0 1rem;
+}
+
+.descripcion {
+    padding: 1rem .5rem;
+    color: #666;
+}
+
+.noticias-card button {
+    margin: 1rem;
+    padding: .5rem 1rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.noticias-card button:hover {
+    background-color: #000;
+}
+
+=== ESTILOS PARA BOTÓN GENÉRICO (quizás en otra página) ===
+
+.btn button {
+    margin: 1rem;
+    padding: .5rem 1rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn button:hover {
+    background-color: #000;
+}
+
+=== ESTILOS PARA PÁGINA DE CONTACTO (contacto.html) ===
+
+#contacto {
+    background-color: #f9f9f9;
+    padding: 4rem 2rem;
+}
+
+#contacto h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input, textarea {
+    padding: .8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+form button {
+    background-color: #5b0c0c;
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #701616;
+}
+
+=== ESTILO DE MAIN GENÉRICO (ya reemplazado) ===
+
+main {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+=== FOOTER (manejado por footer.css) ===
+
+footer {
+    background-color: #5b0c0c;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+=== MEDIA QUERY GENÉRICA (ya incluida arriba) ===
+
+@media screen and (max-width: 430px) {
+    ... 
+}
+
+============================================================================ */
