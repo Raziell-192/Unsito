@@ -25,9 +25,24 @@
             </ul>
         </nav>
 
-         <div class="admin-content">
+        <div class="admin-content">
+
+            <!-- SECCIÓN BIENVENIDA -->
+            <section id="bienvenida-section" class="form-section active-section">
+                <h2>Crear Nuevo Mensaje de Bienvenida</h2>
+                <form id="bienvenidaForm">
+                    <div class="form-group">
+                        <label for="bienvenidaTexto">Escribe el nuevo texto aquí:</label>
+                        <input type="text" id="bienvenidaTexto" placeholder="Ej:Hola y bienvenidos." required>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Guardar Mensaje</button>
+                    <div class="success-message" id="memeSuccess">Mensaje guardado!</div>
+                </form>
+            </section>
+
             <!-- SECCIÓN MEMES -->
-            <section id="memes-section" class="form-section active-section">
+            <section id="memes-section" class="form-section">
                 <h2>Subir Nuevo Meme</h2>
                 <form id="memeForm">
                     <div class="form-group">
@@ -197,6 +212,50 @@
                     <div class="success-message" id="datoSuccess">Dato curioso guardado exitosamente!</div>
                 </form>
             </section>
+
+            <!-- SECCIÓN ANTES VS AHORA -->
+            <section id="tiempo-section" class="form-section">
+                <h2>Crear Nueva Comparación</h2>
+                <form id="comparacionForm">
+                    <div class="form-group">
+                        <label for="comparacionTitulo">Título:</label>
+                        <input type="text" id="comparacionTitulo" placeholder="Ej: El centro de la ciudad hace 50 años vs hoy" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="antesImagen">URL de Imagen "Antes":</label>
+                        <input type="url" id="antesImagen" placeholder="https://ejemplo.com/lugar1.jpg" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="despuesImagen">URL de Imagen "Después":</label>
+                        <input type="url" id="despuesImagen" placeholder="https://ejemplo.com/lugar2.jpg" required>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Guardar Comparación</button>
+                    <div class="success-message" id="comparacionSuccess">Comparación guardada exitosamente!</div>
+                </form>
+            </section>
+
+            <!-- SECCIÓN PREGUNTAS RANDOM -->
+            <section id="random-section" class="form-section">
+                <h2>Crear Nuevas Preguntas</h2>
+                <form id="randomForm">
+                    <div class="form-group">
+                        <label for="randomPregunta">Pregunta:</label>
+                        <input type="text" id="randomPregunta" placeholder="Ej: ¿Cuál es el grafo k5?" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="randomRespuesta">Respuesta:</label>
+                        <textarea id="randomRespuesta" placeholder="Escribe la respuesta correcta..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">Guardar Pregunta</button>
+                    <div class="success-message" id="randomSuccess">Pregunta guardada exitosamente!</div>
+                </form>
+            </section>
+
         </div>
 
         <footer class="admin-footer">
