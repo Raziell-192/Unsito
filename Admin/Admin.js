@@ -1,9 +1,7 @@
-// Admin.js - VERSIÓN FINAL QUE FUNCIONA
-
-// 1. Variable global para controlar Especiales.html
+// Variable global para controlar Especiales.html
 let paginaEspeciales = null;
 
-// 2. Buscar y conectar con Especiales.html al cargar
+// Buscar y conectar con Especiales.html al cargar
 window.addEventListener('load', function() {
     conectarConEspeciales();
     
@@ -19,24 +17,24 @@ window.addEventListener('load', function() {
         msg.style.display = 'none';
     });
     
-    console.log('✅ Admin.js listo');
+    console.log('Admin.js listo');
 });
 
-// 3. Función para conectar con Especiales.html
+// Función para conectar con Especiales.html
 function conectarConEspeciales() {
     // Intentar encontrar Especiales.html abierta
     try {
         // Buscar en todas las ventanas/tabs abiertas
         if (window.opener && !window.opener.closed) {
             paginaEspeciales = window.opener;
-            console.log('🔗 Conectado a Especiales.html');
+            console.log('Conectado a Especiales.html');
         }
     } catch(e) {
-        console.log('⚠️ Especiales.html no está abierta en otra pestaña');
+        console.log('Especiales.html no está abierta en otra pestaña');
     }
 }
 
-// 4. Manejo de pestañas
+// Manejo de pestañas
 function showSection(section) {
     // Ocultar todas las secciones
     document.querySelectorAll('.form-section').forEach(sec => {
@@ -55,7 +53,7 @@ function showSection(section) {
     event.target.classList.add('active');
 }
 
-// 5. Vista previa para memes
+// Vista previa para memes
 document.getElementById('memeImagen').addEventListener('input', function() {
     const preview = document.getElementById('memePreview');
     if (this.value) {
@@ -65,7 +63,7 @@ document.getElementById('memeImagen').addEventListener('input', function() {
     }
 });
 
-// 6. CONFIGURAR TODOS LOS FORMULARIOS
+// CONFIGURAR TODOS LOS FORMULARIOS
 document.addEventListener('DOMContentLoaded', function() {
     const forms = document.querySelectorAll('form');
     
@@ -106,9 +104,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// 7. FUNCIÓN PRINCIPAL: Actualizar Especiales.html con innerHTML
+// FUNCIÓN PRINCIPAL: Actualizar Especiales.html con innerHTML
 function actualizarEspeciales(tipo, datos) {
-    console.log(`🔄 Actualizando ${tipo} en Especiales.html...`);
+    console.log(`Actualizando ${tipo} en Especiales.html...`);
     
     // Si no está conectada, intentar reconectar
     if (!paginaEspeciales || paginaEspeciales.closed) {
@@ -117,12 +115,12 @@ function actualizarEspeciales(tipo, datos) {
     
     // Verificar que tenemos datos y conexión
     if (Object.keys(datos).length === 0) {
-        console.log('❌ No hay datos para actualizar');
+        console.log('No hay datos para actualizar');
         return;
     }
     
     if (!paginaEspeciales || paginaEspeciales.closed) {
-        console.log('⚠️ Abre Especiales.html en otra pestaña primero');
+        console.log('Abre Especiales.html en otra pestaña primero');
         mostrarAvisoAbrirEspeciales();
         return;
     }
@@ -137,7 +135,7 @@ function actualizarEspeciales(tipo, datos) {
                 const bienvenidaDiv = doc.getElementById('bienvenida');
                 if (bienvenidaDiv) {
                     bienvenidaDiv.innerHTML = `<p><strong>${datos.bienvenidaTexto}</strong></p>`;
-                    console.log('✅ Bienvenida actualizada');
+                    console.log('Bienvenida actualizada');
                 }
                 break;
                 
@@ -155,7 +153,7 @@ function actualizarEspeciales(tipo, datos) {
                             <a href="Memes/memes.html" class="cta-button">Ver Todos los Memes</a>
                         </div>
                     `;
-                    console.log('✅ Meme actualizado');
+                    console.log('Meme actualizado');
                 }
                 break;
                 
@@ -174,7 +172,7 @@ function actualizarEspeciales(tipo, datos) {
                             ${datos.triviaDificultad ? `<p><small>Dificultad: ${datos.triviaDificultad}</small></p>` : ''}
                         </div>
                     `;
-                    console.log('✅ Trivia actualizada');
+                    console.log('Trivia actualizada');
                 }
                 break;
                 
@@ -194,7 +192,7 @@ function actualizarEspeciales(tipo, datos) {
                             ${datos.encuestaDuracion ? `<p><small>Encuesta activa por ${datos.encuestaDuracion} días</small></p>` : ''}
                         </div>
                     `;
-                    console.log('✅ Encuesta actualizada');
+                    console.log('Encuesta actualizada');
                 }
                 break;
                 
@@ -210,7 +208,7 @@ function actualizarEspeciales(tipo, datos) {
                             ${datos.datoFuente ? `<p><small>Fuente: ${datos.datoFuente}</small></p>` : ''}
                         </div>
                     `;
-                    console.log('✅ Dato curioso actualizado');
+                    console.log('Dato curioso actualizado');
                 }
                 break;
                 
@@ -232,7 +230,7 @@ function actualizarEspeciales(tipo, datos) {
                             </div>
                         </div>
                     `;
-                    console.log('✅ Comparación actualizada');
+                    console.log('Comparación actualizada');
                 }
                 break;
                 
@@ -246,7 +244,7 @@ function actualizarEspeciales(tipo, datos) {
                             <p><strong>Respuesta:</strong> ${datos.randomRespuesta}</p>
                         </div>
                     `;
-                    console.log('✅ Pregunta random actualizada');
+                    console.log('Pregunta random actualizada');
                 }
                 break;
         }
@@ -255,12 +253,12 @@ function actualizarEspeciales(tipo, datos) {
         mostrarConfirmacionExito(tipo);
         
     } catch(error) {
-        console.error('❌ Error al actualizar Especiales.html:', error);
+        console.error('Error al actualizar Especiales.html:', error);
         mostrarErrorConexion();
     }
 }
 
-// 8. Mostrar confirmación de éxito
+// Mostrar confirmación de éxito
 function mostrarConfirmacionExito(tipo) {
     const confirmacion = document.createElement('div');
     confirmacion.id = 'confirmacion-actualizacion';
@@ -278,7 +276,7 @@ function mostrarConfirmacionExito(tipo) {
     `;
     
     confirmacion.innerHTML = `
-        <h4 style="margin: 0 0 10px 0;">✅ ACTUALIZADO</h4>
+        <h4 style="margin: 0 0 10px 0;"> ACTUALIZADO</h4>
         <p style="margin: 0;">${tipo.toUpperCase()} actualizado en Especiales.html</p>
         <p style="margin: 10px 0 0 0; font-size: 12px; opacity: 0.9;">
             Revisa la otra pestaña
@@ -298,7 +296,7 @@ function mostrarConfirmacionExito(tipo) {
     }, 3000);
 }
 
-// 9. Mostrar aviso si Especiales.html no está abierta
+// Mostrar aviso si Especiales.html no está abierta
 function mostrarAvisoAbrirEspeciales() {
     const aviso = document.createElement('div');
     aviso.id = 'aviso-especiales';
@@ -346,7 +344,7 @@ function cerrarAviso() {
     }
 }
 
-// 10. Mostrar error de conexión
+// Mostrar error de conexión
 function mostrarErrorConexion() {
     const errorDiv = document.createElement('div');
     errorDiv.style.cssText = `
@@ -361,7 +359,7 @@ function mostrarErrorConexion() {
         z-index: 10000;
     `;
     
-    errorDiv.textContent = '❌ Error al conectar con Especiales.html';
+    errorDiv.textContent = 'Error al conectar con Especiales.html';
     
     document.body.appendChild(errorDiv);
     
